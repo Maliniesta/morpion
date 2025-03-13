@@ -34,17 +34,26 @@ sinon message fin du jeu;
 */
 
  
-const carrés=Array.from(document.querySelectorAll(".carré"));
-let joueur1=[""];
-let joueur2= [""];
-let click=0;
 
-const combigagnantes=[
-        [0, 1, 2], [3, 4, 5], [6, 7, 8], 
-    [0, 3, 6], [1, 4, 7], [2, 5, 8], 
-    [0, 4, 8], [2, 4, 6]
-    ]
-const start = document.getElementById("start");
+        const carrés = Array.from(document.querySelectorAll(".carré"));
+        let joueur1 = [];
+        let joueur2 = [];
+        let click = 0;
+
+        // Initialiser les scores
+        let score1 = 0;
+        let score2 = 0;
+
+        const score1Element = document.getElementById("score1");
+        const score2Element = document.getElementById("score2");
+
+        const combigagnantes = [
+            [0, 1, 2], [3, 4, 5], [6, 7, 8], 
+            [0, 3, 6], [1, 4, 7], [2, 5, 8], 
+            [0, 4, 8], [2, 4, 6]
+        ];
+
+        const start = document.getElementById("start");
 
         function jouer() {
             carrés.forEach(function(carré, index) {
@@ -55,7 +64,6 @@ const start = document.getElementById("start");
                             joueur1.push(index);
                             setTimeout(() => checkWin(joueur1, "Joueur 1"), 100);
                             click++;
-                            
                         } else {
                             carré.classList.add('rond');
                             joueur2.push(index);
@@ -66,11 +74,18 @@ const start = document.getElementById("start");
                 });
             });
         }
-        
+
         function checkWin(joueur, nomJoueur) {
             combigagnantes.forEach(function(combigagnante) {
                 if (combigagnante.every(num => joueur.includes(num))) {
                     alert(nomJoueur + ' a gagné !');
+                    if (nomJoueur === "Joueur 1") {
+                        score1++;
+                        score1Element.textContent = score1;
+                    } else {
+                        score2++;
+                        score2Element.textContent = score2;
+                    }
                     reset();
                 }
             });
@@ -80,18 +95,18 @@ const start = document.getElementById("start");
             joueur1.length = 0;  
             joueur2.length = 0; 
             click = 0; 
-             carrés.forEach(function(carré) {
-                carré.classList.remove('croix')
+            carrés.forEach(function(carré) {
+                carré.classList.remove('croix');
                 carré.classList.remove('rond'); 
             });
         }
-        
 
         start.addEventListener('click', function() {
             alert('La partie commence !');
             jouer();
             reset();
         });
+   
 
        
        
