@@ -1,0 +1,65 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+.banner{
+    display: flex;
+    justify-content: center;
+    margin: 2rem;
+}
+
+h1{
+    font-size: 56px;
+    color: blue;
+}
+
+.stats{
+    display: flex;
+    justify-content: space-around;
+}
+
+.player1{
+display: flex;
+flex-direction: column;
+justify-content: center;
+align-items: center;
+}
+
+.player2{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    }
+
+.carrés{
+    margin: 3rem auto;
+    width: 40%;
+    height: auto;
+    border: 3px solid black;
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.carré{
+    width: 33.333%;
+    height: 200px;
+    border: 3px solid black;
+}
+
+.menu{
+    text-align: center;
+}
+    
+.croix{
+    background-image: url('img/close_9055094.png');
+    background-size: cover;
+}
+
+.rond{
+    background-image: url('img/moon-phase_1633952.png');
+    background-size: cover;
+}
+
