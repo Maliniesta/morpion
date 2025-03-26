@@ -39,9 +39,9 @@ const carrés = Array.from(document.querySelectorAll(".carré"));
 let joueur1 = [];
 let joueur2 = [];
 let click = 0;
-let name1 = prompt('Entrez votre nom :');
+let name1 = prompt('Joueur1 , entrez votre nom :');
 document.getElementById('name1').textContent = name1;
-let name2 = prompt('Entrez votre nom :');
+let name2 = prompt('Joueur2 , entrez votre nom :');
 document.getElementById('name2').textContent = name2;
 
 
