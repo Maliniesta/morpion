@@ -86,3 +86,22 @@ p{
 h2{
     font-size: 40px; 
 }
+
+@media screen and (max-width: 480px) {
+    .banner img{
+        display: none;
+    }
+
+    .carré{
+        
+        height:100px;
+        
+    }
+
+    .carrés{
+        position: absolute;
+        top: 20%;
+        width: 100%;
+        
+    }
+  }
